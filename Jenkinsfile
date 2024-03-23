@@ -3,11 +3,12 @@ pipeline {
   stages {
     stage('Build'){
       steps {
-        retry(3) {
-          echo "before throwing errro"
-          error "error in retry"
+        timeout(time: 1, unit: 'SECONDS') //DAYS,HOURS,MICROSECONDS,MINTES,NANOSECONDS,SECONS
+        {
+          echo "sleeping in timeout"
+          sleep 3
         }
-        echo "after retry (3)"              
+        
       }
     }
   }
