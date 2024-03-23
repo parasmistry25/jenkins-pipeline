@@ -1,20 +1,13 @@
 pipeline {
-    agent none
-    stages {
-        stage('Build'){
-            steps {
-                script {
-                    def name = "paras"
-                    
-                    if(name == "paras")
-                        println("hi ${name}")
-                    else
-                        println("hi human")
-                        
-                    sleep 3
-                }
-                    
-            }
-        }
+  agent none
+  stages {
+    stage('Build'){
+      steps {
+        retry(3) {
+          echo "before throwing errro"
+          errro "error in retry"
+        }              
+      }
     }
+  }
 }
