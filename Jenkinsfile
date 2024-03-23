@@ -6,7 +6,8 @@ pipeline {
         retry(3) {
           echo "before throwing errro"
           errro "error in retry"
-        }              
+        }
+        echo "after retry (3)"              
       }
     }
   }
