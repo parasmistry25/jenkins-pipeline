@@ -5,7 +5,7 @@ pipeline {
       steps {
         retry(3) {
           echo "before throwing errro"
-          errro "error in retry"
+          error "error in retry"
         }
         echo "after retry (3)"              
       }
